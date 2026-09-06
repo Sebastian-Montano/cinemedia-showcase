@@ -4,7 +4,7 @@
   --secondary-color: #8a2727;
   --accent-color: #886544;
   --bg-color: #f8fafc;
-  --card-bg: #ffffff;
+  --card-bg: #7c3b2234;
 
   --font-primary: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-size-base: 16px;
@@ -146,4 +146,37 @@ footer {
 .btn-card:focus {
   background-color: #0891b2;
   text-decoration: none;
+}
+
+/* Experiencia destacada */
+
+#destacado {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.featured-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.featured-card h3 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.featured-card p {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.featured-card video {
+  width: 100%;
+  display: block;
 }
