@@ -86,3 +86,64 @@ footer {
   color: white;
   margin-top: var(--spacing-xl);
 }
+
+/* Galería de Experiencias */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: var(--spacing-sm);
+}
+
+.card-body h3 {
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.card-body p {
+  font-size: var(--font-size-body);
+  margin-bottom: var(--spacing-sm);
+  color: #64748b;
+}
+
+.btn-card {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.btn-card:hover,
+.btn-card:focus {
+  background-color: #0891b2;
+  text-decoration: none;
+}
