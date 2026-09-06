@@ -180,3 +180,43 @@ footer {
   width: 100%;
   display: block;
 }
+
+/* Breakpoints */
+
+/* Tablet */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .featured-card {
+    padding: var(--spacing-sm);
+  }
+}
+
+/*Movil*/
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .btn-card {
+    padding: 0.6rem 1rem;
+  }
+}
