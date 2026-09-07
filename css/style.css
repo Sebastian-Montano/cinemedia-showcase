@@ -1,14 +1,18 @@
+/* ESTUDIANTE A: Sebastián Montaño Reyes - Líder de Maquetación Macro y Grid */
+
 /* Estilo y estructura global */
 :root {
-  --primary-color: #4e3131;
-  --secondary-color: #8a2727;
-  --accent-color: #886544;
+  --primary-color: #1e293b;
+  --secondary-color: #0f172a;
+  --accent-color: #2563eb;
   --bg-color: #f8fafc;
-  --card-bg: #7c3b2234;
+  --card-bg: #ffffff;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
 
   --font-primary: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-size-base: 16px;
-  --font-size-heading: 2rem;
+  --font-size-base: 15px;
+  --font-size-heading: 1.5rem;
   --font-size-body: 1rem;
 
   --spacing-unit: 1rem;
@@ -18,14 +22,13 @@
   --spacing-lg: 3rem;
   --spacing-xl: 4rem;
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 12px 24px rgba(15, 23, 42, 0.14);
 
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
 }
-
 
 * {
   margin: 0;
@@ -48,33 +51,37 @@ header#main-header {
   color: white;
   padding: var(--spacing-md);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .header-brand {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  margin-bottom: var(--spacing-unit);
+  align-items: flex-start;
+  margin-bottom: 0;
 }
 
 /* Estructura del contenido principal */
 
 main {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: var(--spacing-lg) var(--spacing-md);
 }
 
 section {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 section h2 {
   font-size: var(--font-size-heading);
-  margin-bottom: var(--spacing-md);
   color: var(--primary-color);
-  text-align: center;
+  background-color: var(--card-bg);
+  border-left: 5px solid var(--accent-color);
+  border-radius: 8px 8px 0 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  text-align: left;
 }
 
 /* Estructura del Footer */
@@ -84,14 +91,13 @@ footer {
   padding: var(--spacing-lg);
   background-color: var(--primary-color);
   color: white;
-  margin-top: var(--spacing-xl);
 }
 
 /* Galería de Experiencias */
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -101,11 +107,13 @@ footer {
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .card img {
@@ -117,6 +125,9 @@ footer {
 
 .card-body {
   padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .card-body h3 {
@@ -128,11 +139,12 @@ footer {
 .card-body p {
   font-size: var(--font-size-body);
   margin-bottom: var(--spacing-sm);
-  color: #64748b;
+  color: var(--text-muted);
+  flex: 1;
 }
 
 .btn-card {
-  display: inline-block;
+  display: block;
   background-color: var(--accent-color);
   color: white;
   padding: 0.5rem 1rem;
@@ -140,48 +152,53 @@ footer {
   border-radius: 4px;
   font-weight: 500;
   transition: var(--transition-fast);
+  text-align: center;
 }
 
 .btn-card:hover,
 .btn-card:focus {
-  background-color: #0891b2;
+  background-color: var(--accent-hover);
   text-decoration: none;
 }
 
 /* Experiencia destacada */
 
 #destacado {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--spacing-lg) var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .featured-card {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   background-color: var(--card-bg);
-  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
   box-shadow: var(--shadow-md);
   overflow: hidden;
+  padding: var(--spacing-md);
 }
 
 .featured-card h3 {
   margin-bottom: var(--spacing-sm);
   color: var(--primary-color);
-  text-align: center;
+  text-align: left;
 }
 
 .featured-card p {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--spacing-sm);
 }
 
 .featured-card video {
-  width: 100%;
   display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
 }
 
-/* Breakpoints */
+/* BREAKPOINTS */
 
 /* Tablet */
 @media (max-width: 768px) {
@@ -198,9 +215,18 @@ footer {
   .featured-card {
     padding: var(--spacing-sm);
   }
+
+  header#main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header#main-header nav ul {
+    width: 100%;
+  }
 }
 
-/*Movil*/
+/* Móvil */
 @media (max-width: 480px) {
   :root {
     --spacing-lg: 1.5rem;
@@ -219,4 +245,198 @@ footer {
   .btn-card {
     padding: 0.6rem 1rem;
   }
+
+  .header-brand h1 {
+    font-size: 1.3rem;
+  }
+
+  header#main-header nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  header#main-header nav a {
+    text-align: center;
+  }
+
+  .btn-submit {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  #valoracion form {
+    padding: var(--spacing-sm);
+  }
 }
+
+
+/* ESTUDIANTE B: Mariana Aristizabal Truque - Líder de Componentes, UI e Interacciones */
+
+:root {
+  --focus-ring: #60a5fa;
+  --nav-hover-bg: rgba(36, 51, 74, 0.42);
+  --input-border: #cbd5e1;
+  --input-focus: var(--accent-color);
+  --accent-hover: #1547b4;
+  --input-bg: #fffdfc;
+  --placeholder-color: #78949a;
+}
+
+/* Cabecera */
+
+header#main-header {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.header-brand h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+.header-brand p {
+  font-size: 0.9rem;
+}
+
+/* Navegación con Flexbox */
+
+header#main-header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+  list-style: none;
+}
+
+header#main-header nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+
+/* Estados de interacción */
+
+header#main-header nav a:hover {
+  background-color: var(--nav-hover-bg);
+  border-bottom-color: var(--focus-ring);
+}
+
+header#main-header nav a:focus {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+  background-color: var(--nav-hover-bg);
+}
+
+header#main-header nav a:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Formulario accesible */
+
+#valoracion form {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: var(--spacing-md);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: inherit;
+  font-size: var(--font-size-body);
+  color: var(--primary-color);
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--input-border);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  width: 100%;
+  transition: var(--transition-fast);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Pseudoelemento: placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--placeholder-color);
+  font-style: italic;
+}
+
+/* Estados del formulario */
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: var(--accent-color);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(39, 62, 138, 0.48);
+}
+
+/* Botón de envío */
+
+.btn-submit {
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--secondary-color);
+  border: 2px solid transparent;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-submit:focus {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.btn-submit:active {
+  background-color: var(--accent-color);
+  box-shadow: none;
+}
+
+
