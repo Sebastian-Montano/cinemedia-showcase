@@ -1,4 +1,17 @@
-/* ESTUDIANTE A: Sebastián Montaño Reyes - Líder de Maquetación Macro y Grid */
+/* Desarrollo de Experiencias Multimedia para la Web
+   Taller Práctico Grupal: Plataforma Web Multimedia con CSS3
+
+   Sebastián Montaño Reyes — Estudiante A
+   Líder de Maquetación Macro y Grid
+   Configuración global, layout principal, galería con CSS Grid
+   y Media Queries.
+
+   Mariana Aristizabal Truque — Estudiante B
+   Líder de Componentes, UI e Interacciones
+   Cabecera, navegación con Flexbox, formulario accesible
+   y estados de interacción (:hover, :focus, :active).*/
+
+/* ESTUDIANTE A: Sebastián Montaño Reyes - Líder de Maquetación Macro y Grid 
 
 /* Estilo y estructura global */
 :root {
@@ -44,7 +57,7 @@ body {
   font-size: var(--font-size-base);
 }
 
-/* Estructura del header */
+/* header */
 
 header#main-header {
   background-color: var(--primary-color);
@@ -61,7 +74,6 @@ header#main-header {
   margin-bottom: 0;
 }
 
-/* Estructura del contenido principal */
 
 main {
   max-width: 100%;
@@ -84,7 +96,7 @@ section h2 {
   text-align: left;
 }
 
-/* Estructura del Footer */
+/*Footer */
 
 footer {
   text-align: center;
@@ -100,6 +112,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--spacing-md);
 }
+
 
 .card {
   background-color: var(--card-bg);
@@ -121,6 +134,11 @@ footer {
   height: 180px;
   object-fit: cover;
   display: block;
+  transition: var(--transition-normal);
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card-body {
@@ -168,7 +186,7 @@ footer {
 }
 
 .featured-card {
-  max-width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -198,78 +216,6 @@ footer {
   background-color: var(--secondary-color);
 }
 
-/* BREAKPOINTS */
-
-/* Tablet */
-@media (max-width: 768px) {
-  :root {
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-sm);
-  }
-
-  .featured-card {
-    padding: var(--spacing-sm);
-  }
-
-  header#main-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header#main-header nav ul {
-    width: 100%;
-  }
-}
-
-/* Móvil */
-@media (max-width: 480px) {
-  :root {
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-  }
-
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xs);
-  }
-
-  .card img {
-    height: 150px;
-  }
-
-  .btn-card {
-    padding: 0.6rem 1rem;
-  }
-
-  .header-brand h1 {
-    font-size: 1.3rem;
-  }
-
-  header#main-header nav ul {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  header#main-header nav a {
-    text-align: center;
-  }
-
-  .btn-submit {
-    align-self: stretch;
-    text-align: center;
-  }
-
-  #valoracion form {
-    padding: var(--spacing-sm);
-  }
-}
-
-
 /* ESTUDIANTE B: Mariana Aristizabal Truque - Líder de Componentes, UI e Interacciones */
 
 :root {
@@ -282,7 +228,7 @@ footer {
   --placeholder-color: #78949a;
 }
 
-/* Cabecera */
+/* header */
 
 header#main-header {
   flex-wrap: wrap;
@@ -301,7 +247,7 @@ header#main-header {
   font-size: 0.9rem;
 }
 
-/* Navegación con Flexbox */
+/* Navegación */
 
 header#main-header nav ul {
   display: flex;
@@ -384,14 +330,18 @@ header#main-header nav a:active {
   min-height: 110px;
 }
 
-/* Pseudoelemento: placeholder */
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--placeholder-color);
   font-style: italic;
+  transition: var(--transition-fast);
 }
 
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  opacity: 0;
+}
 /* Estados del formulario */
 
 .form-group input:hover,
@@ -407,8 +357,6 @@ header#main-header nav a:active {
   border-color: var(--input-focus);
   box-shadow: 0 0 0 3px rgba(39, 62, 138, 0.48);
 }
-
-/* Botón de envío */
 
 .btn-submit {
   align-self: flex-start;
@@ -427,6 +375,7 @@ header#main-header nav a:active {
 .btn-submit:hover {
   background-color: var(--primary-color);
   box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .btn-submit:focus {
@@ -437,6 +386,76 @@ header#main-header nav a:active {
 .btn-submit:active {
   background-color: var(--accent-color);
   box-shadow: none;
+  transform: translateY(1px);
 }
 
+/* ESTUDIANTE A: Sebastián Montaño Reyes - Breakpoints*/
 
+/* Tablet */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .featured-card {
+    padding: var(--spacing-sm);
+  }
+
+  header#main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header#main-header nav ul {
+    width: 100%;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .btn-card {
+    padding: 0.6rem 1rem;
+  }
+
+  .header-brand h1 {
+    font-size: 1.3rem;
+  }
+
+  header#main-header nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  header#main-header nav a {
+    text-align: center;
+  }
+
+  .btn-submit {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  #valoracion form {
+    padding: var(--spacing-sm);
+  }
+}
