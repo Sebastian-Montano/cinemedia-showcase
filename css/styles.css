@@ -1,17 +1,16 @@
-/* Desarrollo de Experiencias Multimedia para la Web
-   Taller Práctico Grupal: Plataforma Web Multimedia con CSS3
+/* Taller Práctico Grupal: Plataforma Web Multimedia con CSS3
 
-   Sebastián Montaño Reyes — Estudiante A
+   Sebastián Montaño Reyes — ESTUADIANTE A
    Líder de Maquetación Macro y Grid
    Configuración global, layout principal, galería con CSS Grid
    y Media Queries.
 
-   Mariana Aristizabal Truque — Estudiante B
+   Mariana Aristizabal Truque — ESTUDIANTE  B
    Líder de Componentes, UI e Interacciones
    Cabecera, navegación con Flexbox, formulario accesible
-   y estados de interacción (:hover, :focus, :active).*/
+   y estados de interacción*/
 
-/* ESTUDIANTE A: Sebastián Montaño Reyes - Líder de Maquetación Macro y Grid 
+/* ESTUDIANTE A: Sebastián Montaño Reyes - Líder de Maquetación Macro y Grid */
 
 /* Estilo y estructura global */
 :root {
@@ -76,7 +75,7 @@ header#main-header {
 
 
 main {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: var(--spacing-lg) var(--spacing-md);
 }
@@ -186,7 +185,7 @@ footer {
 }
 
 .featured-card {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -306,6 +305,7 @@ header#main-header nav a:active {
 }
 
 .form-group label {
+  display: block;
   font-weight: 600;
   color: var(--primary-color);
   font-size: 0.95rem;
